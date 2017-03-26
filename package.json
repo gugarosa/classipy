@@ -1,14 +1,14 @@
 {
-  "name": "classipy",
+  "name": "codipy",
   "version": "1.0.0",
-  "description": "An open-source web-based application that combines the power of deep learning packages in python with user-friendly interface.",
+  "description": "An open-source web-based application that combines the power of python deep learning packages with an user-friendly interface.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gugarosa/classipy.git"
+    "url": "git+https://github.com/gugarosa/codipy.git"
   },
   "keywords": [
     "deep",
@@ -22,9 +22,9 @@
   "author": "Gustavo de Rosa and Bruna Rubio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gugarosa/classipy/issues"
+    "url": "https://github.com/gugarosa/codipy/issues"
   },
-  "homepage": "https://github.com/gugarosa/classipy#readme",
+  "homepage": "https://github.com/gugarosa/codipy#readme",
   "dependencies": {
     "express": "^4.15.2",
     "python-shell": "^0.4.0"
