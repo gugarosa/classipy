@@ -1,0 +1,31 @@
+{
+  "name": "classipy",
+  "version": "1.0.0",
+  "description": "An open-source web-based application that combines the power of deep learning packages in python with user-friendly interface.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugarosa/classipy.git"
+  },
+  "keywords": [
+    "deep",
+    "learning",
+    "image",
+    "classification",
+    "web",
+    "app",
+    "python"
+  ],
+  "author": "Gustavo de Rosa and Bruna Rubio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gugarosa/classipy/issues"
+  },
+  "homepage": "https://github.com/gugarosa/classipy#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
