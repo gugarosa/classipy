@@ -33,9 +33,6 @@ class ConvNet:
 		if weights != None:
 			self._trained = True
 
-		# Print model summary
-		model.summary()
-
 		# Applying model to ConvNet class
 		self.model = model
 
@@ -150,9 +147,6 @@ class ConvNet:
 			print("Error: the model has not been trained.")
 			return
 
-		# Predicting numpy input 'x'
-		print("[INFO] predicting...")
-
 		return self.model.predict(x, batch_size=batch_size, verbose=verbose)
 
 	def decode_predictions(self, preds, path=None, top=None):
@@ -163,7 +157,7 @@ class ConvNet:
 		for pred in preds:
 			top_indices = pred.argsort()[-top:][::-1]
 			result = [tuple(CLASS_INDEX[str(i)]) + (pred[i],) for i in top_indices]
-			result.sort(key=lambda x: x[2], reverse=True)
+			result.sort(key=lambda x: x[1], reverse=True)
 			results.append(result)
 
 		return results
