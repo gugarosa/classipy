@@ -33,3 +33,5 @@ x = preprocess_input(x)
 # Predicting input image
 preds = cnet.predict(x, batch_size=1)
 print(cnet.decode_predictions(preds, path=predictions_path, top=5))
+
+sys.exit()
