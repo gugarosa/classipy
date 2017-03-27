@@ -8,7 +8,7 @@ from keras.utils import np_utils
 def default_path():
 
 	# Config your default root path according to your folder
-	root_path = '/root/LibKeras'
+	root_path = '/root/codipy/scripts/keras'
 
 	return root_path
 

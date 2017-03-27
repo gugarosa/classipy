@@ -2,7 +2,7 @@ var script = 'pre_trained.py';
 
 var options = {
 	scriptPath: '../keras/',
-  args: ['-i', 'tmp/dog.jpg']
+  args: ['-i', '../tmp/dog.jpg']
 };
 
 // Use python shell
