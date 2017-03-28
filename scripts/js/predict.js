@@ -2,14 +2,14 @@ var PythonShell = require('python-shell');
 
 module.exports = {
 
-	newPrediction: function(callback) {
+	newPrediction: function(identifier, callback) {
 
 		var prediction;
 		var script = 'pre_trained.py';
 		var options = {
 			mode: 'text',
 			scriptPath: './scripts/keras/',
-		  args: ['-i', './scripts/tmp/dog.jpg']
+		  args: ['-i', './tmp/' + 'flow-' + identifier + '.png']
 		};
 
 		// Use python shell
