@@ -1,5 +1,4 @@
 import json
-from architectures.SampleNet import SampleNet
 from keras.applications import ResNet50, VGG16, VGG19
 from keras.models import load_model
 from keras.optimizers import SGD
