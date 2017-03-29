@@ -6,6 +6,7 @@ import numpy as np
 import sys
 from keras.preprocessing import image
 from os.path import join
+from PIL import Image, ImageOps
 
 def preprocess_input(x):
 	x /= 255.
@@ -30,10 +31,12 @@ cnet.build_inception3(include_top=True, weights='imagenet', classes=1000)
 
 # Loading and pre-processing input image
 img_path = sys.argv[2]
-img = image.load_img(img_path, target_size=(299, 299))
+img = image.load_img(img_path)
+img = ImageOps.fit(img, (299, 299), Image.ANTIALIAS)
 x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
 x = preprocess_input(x)
+print('Input image shape:', x.shape)
 
 # Predicting input image
 preds = cnet.predict(x, batch_size=1)
