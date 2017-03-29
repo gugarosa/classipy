@@ -4,9 +4,14 @@ import argparse
 import common
 import numpy as np
 import sys
-from keras.applications.imagenet_utils import preprocess_input
 from keras.preprocessing import image
 from os.path import join
+
+def preprocess_input(x):
+    x /= 255.
+    x -= 0.5
+    x *= 2.
+return x
 
 # Parsing input arguments
 parser = argparse.ArgumentParser(description='Pre-trained classification with imagenet weights')
@@ -21,11 +26,11 @@ predictions_path = join(root_in, 'predictions/' + 'imagenet_predictions.json');
 
 # Creating and instanciating the chosen CNN
 cnet = common.ConvNet()
-cnet.build_resnet50(include_top=True, weights='imagenet', classes=1000)
+cnet.build_inception3(include_top=True, weights='imagenet', classes=1000)
 
 # Loading and pre-processing input image
 img_path = sys.argv[2]
-img = image.load_img(img_path, target_size=(224, 224))
+img = image.load_img(img_path, target_size=(299, 299))
 x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
 x = preprocess_input(x)
