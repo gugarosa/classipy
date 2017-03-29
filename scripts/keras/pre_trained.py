@@ -8,10 +8,10 @@ from keras.preprocessing import image
 from os.path import join
 
 def preprocess_input(x):
-    x /= 255.
-    x -= 0.5
-    x *= 2.
-return x
+	x /= 255.
+	x -= 0.5
+	x *= 2.
+	return x
 
 # Parsing input arguments
 parser = argparse.ArgumentParser(description='Pre-trained classification with imagenet weights')
