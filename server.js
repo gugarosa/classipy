@@ -12,8 +12,11 @@ var app     = express();
 var ACCESS_CONTROLL_ALLOW_ORIGIN = false;
 
 // Using the following routes for the app
-app.use(express.static(__dirname + '/view'));
+app.use(express.static(__dirname + '/node_modules/bootstrap'));
 app.use(express.static(__dirname + '/scripts/js'));
+app.use(express.static(__dirname + '/view'));
+app.use(express.static(__dirname + '/view/figs'));
+app.use(express.static(__dirname + '/view/css'));
 
 // Handle index page rendering
 app.get('/',function(req,res){
