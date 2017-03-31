@@ -30,19 +30,20 @@ imgload = function () {
       'Predict' +
       '</a> ' +
       '<span class="flow-file-pause">' +
-      ' <img src="pause.png" title="Pause upload" />' +
+      ' <a href="javascript:;"><i class="fa fa-pause" title="Pause upload"></i></a>' +
       '</span>' +
       '<span class="flow-file-resume">' +
-      ' <img src="resume.png" title="Resume upload" />' +
+      ' <a href="javascript:;"><i class="fa fa-play" title="Resume upload"></i></a>' +
       '</span>' +
       '<span class="flow-file-cancel">' +
-      ' <img src="cancel.png" title="Cancel upload" />' +
+      ' <a href="javascript:;"><i class="fa fa-times" title="Cancel upload"></i></a>' +
       '</span>'
     );
     var $self = $('.flow-file-'+file.uniqueIdentifier);
     $self.find('.flow-file-name').text(file.name);
     $self.find('.flow-file-size').text(readablizeBytes(file.size));
     $self.find('.flow-file-download').attr('href', '/download/' + file.uniqueIdentifier).hide();
+		$self.find('.flow-file-resume').hide();
     $self.find('.flow-file-pause').on('click', function () {
       file.pause();
       $self.find('.flow-file-pause').hide();

@@ -21,6 +21,9 @@
 		<link href="style.css" rel="stylesheet">
 		<link href="flow-style.css" rel="stylesheet">
 
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
@@ -47,9 +50,26 @@
             <li role="presentation" class="active"><a href="#">Home</a></li>
             <li role="presentation"><a href="#">About</a></li>
             <li role="presentation"><a href="#">Contact</a></li>
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
-        <h3 class="text-muted">Codipy</h3>
+				<div class="header-title">
+          <a href="#" style="text-decoration: none;">
+            <img src="codipy_logo.png" alt="Logo" class="img-responsive" hspace="5">
+            <h3 class="text-muted">Codipy</h3>
+          </a>
+        </div>
       </div>
 
       <div class="jumbotron">
@@ -59,16 +79,6 @@
       </div>
 
       <div class="row marketing">
-        <!-- <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div> -->
         <div class="page-header">
           <h1>Image Classification</h1>
         </div>
@@ -79,7 +89,7 @@
 
         <div align="center">
 					<p>Please upload your own image to try our classification. Remember that only images are allowed.<br>Maximum size: 5MB</p>
-          <a class="flow-browse-image btn btn-danger">Select image</a>
+          <a class="flow-browse-image btn btn-danger">Select image <i class="fa fa-picture-o"></i></a>
         </div>
 
         <div class="flow-progress">
@@ -88,9 +98,9 @@
               <td width="100%"><div class="progress-container"><div class="progress-bar"></div></div></td>
               <td class="progress-text" nowrap="nowrap"></td>
               <td class="progress-pause" nowrap="nowrap">
-                <a href="#" onclick="r.upload(); return(false);" class="progress-resume-link"><img src="resume.png" title="Resume upload" /></a>
-                <a href="#" onclick="r.pause(); return(false);" class="progress-pause-link"><img src="pause.png" title="Pause upload" /></a>
-                <a href="#" onclick="r.cancel(); return(false);" class="progress-cancel-link"><img src="cancel.png" title="Cancel upload" /></a>
+                <a href="#" onclick="r.upload(); return(false);" class="progress-resume-link"><i class="fa fa-play" title="Resume upload"></i></a>
+                <a href="#" onclick="r.pause(); return(false);" class="progress-pause-link"><i class="fa fa-pause" title="Pause upload"></i></a>
+                <a href="#" onclick="r.cancel(); return(false);" class="progress-cancel-link"><i class="fa fa-times" title="Cancel upload"></i></a>
               </td>
             </tr>
           </table>
@@ -103,13 +113,20 @@
       </div>
 
       <footer class="footer">
-        <p align="center">&copy; 2017 Codipy.run</p>
+				<p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="pull-left">&copy; 2017 Codipy.run</p>
       </footer>
 
     </div> <!-- /container -->
 
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="dist/js/bootstrap.min.js"></script>
+		<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+		<script src="assets/js/vendor/holder.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
