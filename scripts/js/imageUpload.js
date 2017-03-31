@@ -11,10 +11,10 @@ imgload = function () {
   }
   // Show a place for dropping/selecting files
   $('.flow-drop').show();
-  r.assignDrop($('.flow-drop')[0]);
-  r.assignBrowse($('.flow-browse')[0]);
-  r.assignBrowse($('.flow-browse-folder')[0], true);
-  r.assignBrowse($('.flow-browse-image')[0], false, false, {accept: 'image/*'});
+  // r.assignDrop($('.flow-drop'));
+  // r.assignBrowse($('.flow-browse')[0]);
+  // r.assignBrowse($('.flow-browse-folder')[0], true);
+  r.assignBrowse($('.flow-browse-image')[0], false, true, {accept: 'image/*'});
 
   // Handle file add event
   r.on('fileAdded', function(file){
@@ -104,6 +104,7 @@ imgload = function () {
     cancel: function() {
       r.cancel();
       $('.flow-file').remove();
+			$('.flow-progress').hide();
     },
     upload: function() {
       $('.flow-file-pause').show();
