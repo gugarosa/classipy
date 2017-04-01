@@ -51,6 +51,49 @@ body {
     max-width: 730px;
   }
 }
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .container {
+    max-width: 730px;
+  }
+	.header-title img {
+		float: left;
+		position: inherit;
+		width: 8%;
+		height: 8%;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .container {
+    max-width: 602px;
+  }
+	.header-title img {
+		float: left;
+		position: inherit;
+		width: 10%;
+		height: 10%;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    max-width: 442px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    max-width: 282px;
+  }
+	.header-title img {
+	  float: left;
+		position: inherit;
+	  width: 20%;
+	  height: 20%;
+	}
+}
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -110,6 +153,7 @@ body {
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
@@ -124,7 +168,7 @@ body {
 }
 
 /* Responsive: Phones and down */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -136,6 +180,7 @@ body {
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
