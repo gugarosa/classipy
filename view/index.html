@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="codipy_icon.ico">
@@ -25,14 +24,7 @@
 		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
     <!-- Inner Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -43,7 +35,10 @@
 
   <body>
 
+		<!-- Main Container -->
     <div class="container">
+
+			<!-- Header -->
       <div class="header clearfix">
         <nav>
 					<div class="navbar-header">
@@ -70,8 +65,8 @@
         </nav>
       </div>
 
+			<!-- Carousel -->
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -118,20 +113,19 @@
 				</a>
 			</div>
 
+			<!-- Image Classification Section -->
       <div class="row marketing">
         <div class="page-header">
           <h1>Image Classification</h1>
         </div>
-
         <div class="flow-error">
           Your browser, unfortunately, is not supported by Flow.js. The library requires support for <a href="http://www.w3.org/TR/FileAPI/">the HTML5 File API</a> along with <a href="http://www.w3.org/TR/FileAPI/#normalization-of-params">file slicing</a>.
         </div>
-
         <div align="center">
 					<p>Please upload your own image to try our classification. Remember that only images are allowed.<br>Maximum size: 5MB</p>
           <a class="flow-browse-image btn btn-danger">Select image <i class="fa fa-picture-o"></i></a>
         </div>
-
+				<!-- Flow.js Upload -->
         <div class="flow-progress">
           <table>
             <tr>
@@ -145,19 +139,17 @@
             </tr>
           </table>
         </div>
-
         <ul class="flow-list"></ul>
-
         <script>imgload();</script>
-
       </div>
 
+			<!-- Footer -->
       <footer class="footer">
 				<p class="pull-right"><a href="#">Back to top</a></p>
         <p class="pull-left">&copy; 2017 Codipy.run</p>
       </footer>
 
-    </div> <!-- /container -->
+    </div>
 
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
