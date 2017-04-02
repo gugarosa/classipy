@@ -21,8 +21,7 @@ body {
 
 /* Custom page header */
 .header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -45,8 +44,34 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+/* Customize navbar */
+.navbar-nav > li > a {
+	border-radius: 6px;
+	color: #DE432A;
+	margin: 0 0 5px 4px;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+		background-color: #e5e5e5;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	color: #FFFFFF;
+	background-color: #DE432A;
+}
+
+.navbar-nav > .open > a,
+.navbar-nav > .open > a:hover,
+.navbar-nav > .open > a:focus {
+    color: #DE432A;
+    background-color: #e5e5e5;
+}
+
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 768px){
   .container {
     max-width: 730px;
   }
