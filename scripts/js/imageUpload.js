@@ -42,7 +42,7 @@ imgload = function () {
     var $self = $('.flow-file-'+file.uniqueIdentifier);
     $self.find('.flow-file-name').text(file.name);
     $self.find('.flow-file-size').text(readablizeBytes(file.size));
-    $self.find('.flow-file-download').attr('href', '/download/' + file.uniqueIdentifier).hide();
+    $self.find('.flow-file-download').attr('href', '/predict/' + file.uniqueIdentifier).hide();
 		$self.find('.flow-file-resume').hide();
     $self.find('.flow-file-pause').on('click', function () {
       file.pause();
@@ -71,7 +71,7 @@ imgload = function () {
     // Reflect that the file upload has completed
     $self.find('.flow-file-progress').text('(completed)');
     $self.find('.flow-file-pause, .flow-file-resume').remove();
-    $self.find('.flow-file-download').attr('href', '/download/' + file.uniqueIdentifier).show();
+    $self.find('.flow-file-download').attr('href', '/predict/' + file.uniqueIdentifier).show();
   });
   r.on('fileError', function(file, message){
     // Reflect that the file upload has resulted in error

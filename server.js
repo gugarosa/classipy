@@ -23,15 +23,6 @@ app.get('/',function(req,res){
   res.sendFile('index.html');
 });
 
-// Handle new prediction function
-app.get('/predict',function(req,res){
-  predict.newPrediction(function (err, result) {
-		if (err) throw err;
-		console.log(result);
-		res.end(result);
-	});
-});
-
 // Handle uploads through Flow.js
 app.post('/upload', multipartMiddleware, function(req, res) {
   flow.post(req, function(status, filename, original_filename, identifier) {
@@ -42,7 +33,6 @@ app.post('/upload', multipartMiddleware, function(req, res) {
     res.status(/^(partly_done|done)$/.test(status) ? 200 : 500).send();
   });
 });
-
 
 app.options('/upload', function(req, res){
   console.log('OPTIONS');
@@ -70,17 +60,21 @@ app.get('/upload', function(req, res) {
   });
 });
 
-// // Handle downloads through Flow.js
-// app.get('/download/:identifier', function(req, res) {
-// 	flow.write(req.params.identifier, res);
-// });
-
-// Handle downloads through Flow.js
-app.get('/download/:identifier', function(req, res) {
+// Handle predictions through Flow.js
+app.get('/predict/:identifier', function(req, res) {
 	predict.newPrediction(req.params.identifier, function (err, result) {
 		if (err) throw err;
 		console.log(result);
-		res.end(result);
+		var response = "<script>";
+		response += "//script stuff here";
+		response += "</script>";
+		response += "<style>";
+		response += "//style stuff here";
+		response += "</style>";
+		response += "<b>Hello from my http server!!</b> <br/>";
+		response += "<p>Total awesome: " + result + "</p>";
+		res.writeHead(200, {"Content-Type": "text/html"});
+		res.end(response);
 	});
 });
 
