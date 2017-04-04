@@ -30,11 +30,19 @@ body {
   line-height: 40px;
 }
 
+.header-title {
+	font-family: 'Raleway', sans-serif;
+}
+
 .header-title img {
   float: left;
 	position: inherit;
   width: 15%;
   height: 15%;
+}
+
+.navbar-brand {
+	font-size: 21px;
 }
 
 /* Custom page footer */
