@@ -65,16 +65,7 @@ app.get('/predict/:identifier', function(req, res) {
 	predict.newPrediction(req.params.identifier, function (err, result) {
 		if (err) throw err;
 		console.log(result);
-		var response = "<script>";
-		response += "//script stuff here";
-		response += "</script>";
-		response += "<style>";
-		response += "//style stuff here";
-		response += "</style>";
-		response += "<b>Hello from my http server!!</b> <br/>";
-		response += "<p>Total awesome: " + result + "</p>";
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(response);
+		res.end(result);
 	});
 });
 
