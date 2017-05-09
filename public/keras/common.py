@@ -7,7 +7,7 @@ from keras.utils import np_utils
 def default_path():
 
 	# Config your default root path according to your folder
-	root_path = '/home/localadm/Documents/codipy/public/keras'
+	root_path = '/root/codipy/public/keras'
 
 	return root_path
 
