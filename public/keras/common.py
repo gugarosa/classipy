@@ -7,7 +7,7 @@ from keras.utils import np_utils
 def default_path():
 
 	# Config your default root path according to your folder
-	root_path = '/root/codipy/public/keras'
+	root_path = '/home/localadm/Documents/codipy/public/keras'
 
 	return root_path
 
@@ -167,12 +167,10 @@ class ConvNet:
 
 		# Decodes the predictions into readable inputs from path file
 		CLASS_INDEX = json.load(open(path))
-		results = []
 		for pred in preds:
 			top_indices = pred.argsort()[-top:][::-1]
-			result = [tuple(CLASS_INDEX[str(i)]) + (pred[i],) for i in top_indices]
-			result.sort(key=lambda x: x[1], reverse=True)
-			results.append(result)
+		results = {'data':[{'class': CLASS_INDEX[str(top_indices[0])], 'value': str(pred[top_indices[0]])}, {'class': CLASS_INDEX[str(top_indices[1])], 'value': str(pred[top_indices[1]])}, {'class': CLASS_INDEX[str(top_indices[2])], 'value': str(pred[top_indices[2]])}, {'class': CLASS_INDEX[str(top_indices[3])], 'value': str(pred[top_indices[3]])}, {'class': CLASS_INDEX[str(top_indices[4])], 'value': str(pred[top_indices[4]])}]}
+		results = json.dumps(results, indent=4)
 
 		return results
 
