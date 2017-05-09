@@ -26,7 +26,7 @@ imgload = function () {
       'Uploading <span class="flow-file-name"></span> ' +
       '<span class="flow-file-size"></span> ' +
       '<span class="flow-file-progress"></span> ' +
-      '<a href="" class="flow-file-download" target="_blank">' +
+      '<a href="" class="flow-file-download btn btn-danger btn-xs" target="_blank">' +
       'Predict' +
       '</a> ' +
       '<span class="flow-file-pause">' +
@@ -37,7 +37,7 @@ imgload = function () {
       '</span>' +
       '<span class="flow-file-cancel">' +
       ' <a href="javascript:;"><i class="fa fa-times" title="Cancel upload"></i></a>' +
-      '</span>'
+      '</span></li><br>'
     );
     var $self = $('.flow-file-'+file.uniqueIdentifier);
     $self.find('.flow-file-name').text(file.name);

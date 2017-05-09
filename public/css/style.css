@@ -147,6 +147,11 @@ body {
   font-size: 16px;
 }
 
+.jumbotron .btn-xs {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
 /* Carousel base class */
 .carousel {
   height: 300px;
