@@ -81,10 +81,16 @@ app.get('/predict/:identifier', function (req, res) {
         if (err) throw err;
         console.log(result);
         output = JSON.parse(result);
+        id = req.params.identifier;
         res.render('prediction', {
-            output: output
+            output: output,
+            id: id
         });
     });
+});
+
+app.get('/download/:identifier', function(req, res) {
+  flow.write(req.params.identifier, res);
 });
 
 // Listening on desired port

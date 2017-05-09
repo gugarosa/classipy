@@ -56,10 +56,10 @@
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="im_classify">Image Classification <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="../im_classify">Image Classification <span class="sr-only">(current)</span></a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">About</a></li>
+                            <li><a href="../about">About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,24 +67,38 @@
         </div>
 
         <div class="jumbotron">
+            <h1>Classification Output</h1>
             <p class="lead">
-                <%= output.data[0].class %>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <img src="https://codipy.run/download/<%= id %>" alt="..." class="img-thumbnail">
+                    </div>
+                    <div class="col-md-8 col-sm-4">
+                        <div class="list-group">
+                            <% output.data.forEach(function(prediction) {%>
+                                <a href="https://www.google.com/#q=<%= prediction.class %>" class="list-group-item" target="_blank">
+                                    <%= prediction.class %><span class="label label-danger pull-right"><%= prediction.value %></span>
+                                </a>
+                                <% }); %>
+                        </div>
+                    </div>
+                </div>
             </p>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p class="pull-left">&copy; 2017 Codipy.run</p>
+            </footer>
+
         </div>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p class="pull-left">&copy; 2017 Codipy.run</p>
-        </footer>
-
-    </div>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="../js/vendor/jquery.min.js"><\/script>')
-    </script>
-    <script src="../js/bootstrap.min.js"></script>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="../js/vendor/jquery.min.js"><\/script>')
+        </script>
+        <script src="../js/bootstrap.min.js"></script>
 </body>
 
 </html>

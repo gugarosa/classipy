@@ -167,6 +167,8 @@ module.exports = flow = function(temporaryFolder) {
                         // jump to the next one
                         pipeChunk(number + 1);
                     });
+                    if (number == 10)
+                        writableStream.end();
                 } else {
                     // When all the chunks have been piped, end the stream
                     if (options.end) writableStream.end();
