@@ -80,9 +80,7 @@ app.get('/predict/:identifier', function(req, res) {
 	predict.newPrediction(req.params.identifier, function (err, result) {
 		if (err) throw err;
 		console.log(result);
-		res.render('prediction', {
-      title: 'Testing'
-    });
+		res.render('prediction', result);
 	});
 });
 
