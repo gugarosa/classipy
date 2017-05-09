@@ -170,7 +170,7 @@ class ConvNet:
 		for pred in preds:
 			top_indices = pred.argsort()[-top:][::-1]
 		results = {'data':[{'class': CLASS_INDEX[str(top_indices[0])], 'value': str(pred[top_indices[0]])}, {'class': CLASS_INDEX[str(top_indices[1])], 'value': str(pred[top_indices[1]])}, {'class': CLASS_INDEX[str(top_indices[2])], 'value': str(pred[top_indices[2]])}, {'class': CLASS_INDEX[str(top_indices[3])], 'value': str(pred[top_indices[3]])}, {'class': CLASS_INDEX[str(top_indices[4])], 'value': str(pred[top_indices[4]])}]}
-		results = json.dumps(results, indent=4)
+		results = json.dumps(results)
 
 		return results
 
